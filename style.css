@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Bangers', cursive;
+  color: yellow;
+  background: red;
+}
+.container-fluid {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  perspective: 4000px;
+  -webkit-perspective: 4000px;
+}
+.padding {
+  height: 25vh;
+}
+.content {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.floating-img {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.floating-img.is-absolute {
+  position: absolute;
+}
+.floating-img div {
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.floating-img div:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.round {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 5px 5px 1px #000;
+  -webkit-transform: translateZ(290px);
+  -ms-transform: translateZ(290px);
+  transform: translateZ(290px);
+}
+.text h1 {
+  padding-top: 20%;
+  font-size: 1000%;
+  text-shadow: 10px 5px 1px #000;
+  -webkit-transform: translateZ(400px);
+  -ms-transform: translateZ(400px);
+  transform: translateZ(400px);
+}
+.no-preserve-3d .floating-img {
+  /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
+  position: relative;
+}
